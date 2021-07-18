@@ -27,7 +27,7 @@ taskInput.value = '';
 // Change
 select.addEventListener('change', runEvent);
 
-function runEvent(e){
+function runEvent(e) {
   console.log(`EVENT TYPE: ${e.type}`);
 
   //console.log(e.target.value);
