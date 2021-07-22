@@ -29,7 +29,7 @@ UI.prototype.deleteBook = function (target) {
     if (target.className === 'delete') {
         target.parentElement.parentElement.remove();
     }
-}
+};
 
 // Clear fields
 UI.prototype.clearFields = function () {
@@ -107,4 +107,4 @@ document.getElementById('book-list').addEventListener('click', function (e) {
     ui.showAlert('Book removed successfully!', 'success');
 
     e.preventDefault();
-})
+});
