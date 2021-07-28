@@ -1,19 +1,19 @@
-const PageState = function() {
-  let currentState = new homeState(this);
+const PageState = function () {
+    let currentState = new homeState(this);
 
-  this.init = function() {
-    this.change(new homeState);
-  }
+    this.init = function () {
+        this.change(new homeState);
+    }
 
-  this.change = function(state) {
-    currentState = state;
-  }
+    this.change = function (state) {
+        currentState = state;
+    }
 };
 
 // Home State
-const homeState = function(page) {
-  document.querySelector('#heading').textContent = null;
-  document.querySelector('#content').innerHTML = `
+const homeState = function (page) {
+    document.querySelector('#heading').textContent = null;
+    document.querySelector('#content').innerHTML = `
     <div class="jumbotron">
     <h1 class="display-3">Hello, world!</h1>
     <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
@@ -27,17 +27,17 @@ const homeState = function(page) {
 };
 
 // About State
-const aboutState = function(page) {
-  document.querySelector('#heading').textContent = 'About Us';
-  document.querySelector('#content').innerHTML = `
+const aboutState = function (page) {
+    document.querySelector('#heading').textContent = 'About Us';
+    document.querySelector('#content').innerHTML = `
     <p>This is the about page</p>
 `;
 };
 
 // Contact State
-const contactState = function(page) {
-  document.querySelector('#heading').textContent = 'Contact Us';
-  document.querySelector('#content').innerHTML = `
+const contactState = function (page) {
+    document.querySelector('#heading').textContent = 'Contact Us';
+    document.querySelector('#content').innerHTML = `
   <form>
     <div class="form-group">
       <label>Name</label>
@@ -60,26 +60,27 @@ page.init();
 
 // UI Vars
 const home = document.getElementById('home'),
-      about = document.getElementById('about'),
-      contact = document.getElementById('contact');
+    about = document.getElementById('about'),
+    contact = document.getElementById('contact');
 
 // Home
 home.addEventListener('click', (e) => {
-  page.change(new homeState);
+    page.change(new homeState());
 
-  e.preventDefault();
+    e.preventDefault();
 });
 
 // About
 about.addEventListener('click', (e) => {
-  page.change(new aboutState);
+    page.change(new aboutState());
 
-  e.preventDefault();
+    e.preventDefault();
 });
 
 // Contact
 contact.addEventListener('click', (e) => {
-  page.change(new contactState);
+    page.change(new contactState());
 
-  e.preventDefault();
+    e.preventDefault();
 });
+
